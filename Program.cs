@@ -120,9 +120,6 @@ do
     Console.ReadKey();
             break;
         
-        
-        
-        
         //--------------------------------------Depositos---------------------------------------------//
         
         
@@ -491,30 +488,6 @@ do
             break;
     }
 } while (opcion != 5);
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    
-    
-    
-    
-    
-    
-
-
-
-
-
 
 
 static void MenuPrincipal()
