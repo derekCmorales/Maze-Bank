@@ -433,11 +433,11 @@ do
             
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write("Saldo actual de la cuenta: ");
-            Console.WriteLine("");
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine(saldoCuenta);
             
             Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("");
             Console.Write("Cantidad de depósitos realizados: ");
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine(cantidadDepositos);
@@ -475,6 +475,7 @@ do
                 Console.Write(barra);
             }
             Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine("");
             Console.Write("\nPresione cualquier tecla para regresar al menú.");
             Console.ReadKey();
             break;
