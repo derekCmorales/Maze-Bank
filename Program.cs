@@ -1,14 +1,12 @@
-﻿/* sistema bancario hecho por
+/* sistema bancario hecho por
     José Javier Rodríguez Alvarado 1535524
     Derek Adolfo Calderón Moraes 1567624
  */
-
-
 Random rnd = new Random();
-
-int numCuenta = rnd.Next(10000, 15000);
 List<int> numcheque_ls = new List<int>();
+
 int numcheque;
+
 string nombres = "N/A";
 string apellidos = "N/A";
 int saldoCuenta = 0;
@@ -18,7 +16,11 @@ int cantidadDepositos = 0;
 int nuevoRetiro = 0;
 int cantidadRetiros = 0;
 int penalizaciones = 0;
+
+//numero decuenta que ingresa el usuario
 int cuenta;
+//numero de cuenta creado por el sistema
+int numCuenta = rnd.Next(10000, 15000);
 
 
 do
@@ -46,7 +48,7 @@ do
     {
         Console.Clear();
         encabezadoApertura();
-        Console.Write("Nombre del titular: ");
+        Console.Write("Nombre del titular de la cuenta: ");
         Console.ForegroundColor = ConsoleColor.White;
         nombres = Console.ReadLine();
         
@@ -58,7 +60,7 @@ do
     {
         Console.Clear();
         encabezadoApertura();
-        Console.Write("Apellido del titular: ");
+        Console.Write("Apellido del titular de la cuenta: ");
         Console.ForegroundColor = ConsoleColor.White;
         apellidos = Console.ReadLine();
         
@@ -71,7 +73,7 @@ do
     Console.Clear();
     encabezadoApertura();
     Console.ForegroundColor = ConsoleColor.Blue;
-    Console.Write("Saldo inicial para crear la cuenta. (Mínimo Q200) : ");
+    Console.Write("Saldo inicial para crear la cuenta. (Mínimo Q200): ");
     Console.ForegroundColor = ConsoleColor.White;
     while (!int.TryParse(Console.ReadLine(), out Balance) || Balance < 200)
     {
@@ -81,7 +83,6 @@ do
         Console.ForegroundColor = ConsoleColor.Blue;
         Console.Write("Saldo inicial para crear la cuenta. (Mínimo Q200): ");
         Console.ForegroundColor = ConsoleColor.White;
-        
     }
     Console.Clear();
     encabezadoApertura();
@@ -109,9 +110,8 @@ do
     Console.Write("Apellido del titular de la cuenta: ");
     Console.ForegroundColor = ConsoleColor.White;
     Console.WriteLine(apellidos);
+    
     saldoCuenta += Balance;
-            
-
     
     
     Console.ForegroundColor = ConsoleColor.Green;
@@ -121,9 +121,6 @@ do
             break;
         
         //--------------------------------------Depositos---------------------------------------------//
-        
-        
-        
         
         case 2:
 
@@ -182,6 +179,7 @@ do
             Console.Write("\nPulsa cualquier tecla si quieres continuar con el depósito.");
             Console.ForegroundColor = ConsoleColor.White;
             Console.ReadKey();
+            
             Console.Clear();
             encabezadoDepositos();
             Console.ForegroundColor = ConsoleColor.Blue;
@@ -309,8 +307,7 @@ do
                     Console.ForegroundColor = ConsoleColor.White;
                     Console.Write("N.");
                 }
-
-                numcheque = Convert.ToInt32(numcheque);
+                
 
                 if (numcheque_ls.Contains(numcheque))
                 {
@@ -442,7 +439,6 @@ do
             
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.Write("Cantidad de depósitos realizados: ");
-            Console.WriteLine("");
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine(cantidadDepositos);
             string barra = "\u2588";
@@ -460,7 +456,6 @@ do
             Console.Write("\nCantidad de retiros realizados: ");
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine(cantidadRetiros);
-            barra = "\u2588";
 
             for (int i = 1; i <= cantidadRetiros; i++)
             {
@@ -490,6 +485,7 @@ do
 } while (opcion != 5);
 
 
+
 static void MenuPrincipal()
 {
     // Título e interfaz inicial
@@ -510,7 +506,6 @@ static void MenuPrincipal()
 }
 
 
-
 static void Salida()
 {
     
@@ -519,9 +514,6 @@ static void Salida()
     Console.WriteLine("     \u2588\u2588\u2557 \u2588\u2588\u2588\u2588\u2588\u2557 \u2588\u2588\u2557   \u2588\u2588\u2557\u2588\u2588\u2557\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2588\u2588\u2588\u2588\u2557                             \u2588\u2588\u2588\u2588\u2588\u2588\u2557  \u2588\u2588\u2588\u2588\u2588\u2588\u2557 \u2588\u2588\u2588\u2588\u2588\u2588\u2557 \u2588\u2588\u2588\u2588\u2588\u2588\u2557 \u2588\u2588\u2557 \u2588\u2588\u2588\u2588\u2588\u2588\u2557 \u2588\u2588\u2557   \u2588\u2588\u2557\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557\n     \u2588\u2588\u2551\u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2557\u2588\u2588\u2551   \u2588\u2588\u2551\u2588\u2588\u2551\u2588\u2588\u2554\u2550\u2550\u2550\u2550\u255d\u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2557                            \u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2557\u2588\u2588\u2554\u2550\u2550\u2550\u2588\u2588\u2557\u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2557\u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2557\u2588\u2588\u2551\u2588\u2588\u2554\u2550\u2550\u2550\u2550\u255d \u2588\u2588\u2551   \u2588\u2588\u2551\u2588\u2588\u2554\u2550\u2550\u2550\u2550\u255d\u255a\u2550\u2550\u2588\u2588\u2588\u2554\u255d\n     \u2588\u2588\u2551\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2551\u2588\u2588\u2551   \u2588\u2588\u2551\u2588\u2588\u2551\u2588\u2588\u2588\u2588\u2588\u2557  \u2588\u2588\u2588\u2588\u2588\u2588\u2554\u255d                            \u2588\u2588\u2588\u2588\u2588\u2588\u2554\u255d\u2588\u2588\u2551   \u2588\u2588\u2551\u2588\u2588\u2551  \u2588\u2588\u2551\u2588\u2588\u2588\u2588\u2588\u2588\u2554\u255d\u2588\u2588\u2551\u2588\u2588\u2551  \u2588\u2588\u2588\u2557\u2588\u2588\u2551   \u2588\u2588\u2551\u2588\u2588\u2588\u2588\u2588\u2557    \u2588\u2588\u2588\u2554\u255d \n\u2588\u2588   \u2588\u2588\u2551\u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2551\u255a\u2588\u2588\u2557 \u2588\u2588\u2554\u255d\u2588\u2588\u2551\u2588\u2588\u2554\u2550\u2550\u255d  \u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2557                            \u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2557\u2588\u2588\u2551   \u2588\u2588\u2551\u2588\u2588\u2551  \u2588\u2588\u2551\u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2557\u2588\u2588\u2551\u2588\u2588\u2551   \u2588\u2588\u2551\u2588\u2588\u2551   \u2588\u2588\u2551\u2588\u2588\u2554\u2550\u2550\u255d   \u2588\u2588\u2588\u2554\u255d  \n\u255a\u2588\u2588\u2588\u2588\u2588\u2554\u255d\u2588\u2588\u2551  \u2588\u2588\u2551 \u255a\u2588\u2588\u2588\u2588\u2554\u255d \u2588\u2588\u2551\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2551  \u2588\u2588\u2551                            \u2588\u2588\u2551  \u2588\u2588\u2551\u255a\u2588\u2588\u2588\u2588\u2588\u2588\u2554\u255d\u2588\u2588\u2588\u2588\u2588\u2588\u2554\u255d\u2588\u2588\u2551  \u2588\u2588\u2551\u2588\u2588\u2551\u255a\u2588\u2588\u2588\u2588\u2588\u2588\u2554\u255d\u255a\u2588\u2588\u2588\u2588\u2588\u2588\u2554\u255d\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557\n \u255a\u2550\u2550\u2550\u2550\u255d \u255a\u2550\u255d  \u255a\u2550\u255d  \u255a\u2550\u2550\u2550\u255d  \u255a\u2550\u255d\u255a\u2550\u2550\u2550\u2550\u2550\u2550\u255d\u255a\u2550\u255d  \u255a\u2550\u255d                            \u255a\u2550\u255d  \u255a\u2550\u255d \u255a\u2550\u2550\u2550\u2550\u2550\u255d \u255a\u2550\u2550\u2550\u2550\u2550\u255d \u255a\u2550\u255d  \u255a\u2550\u255d\u255a\u2550\u255d \u255a\u2550\u2550\u2550\u2550\u2550\u255d  \u255a\u2550\u2550\u2550\u2550\u2550\u255d \u255a\u2550\u2550\u2550\u2550\u2550\u2550\u255d\u255a\u2550\u2550\u2550\u2550\u2550\u2550\u255d\n\u2588\u2588\u2588\u2588\u2588\u2588\u2557 \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2588\u2588\u2588\u2588\u2557 \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2557  \u2588\u2588\u2557                                 \u2588\u2588\u2588\u2588\u2588\u2588\u2557 \u2588\u2588\u2588\u2588\u2588\u2557 \u2588\u2588\u2557     \u2588\u2588\u2588\u2588\u2588\u2588\u2557 \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2588\u2588\u2588\u2588\u2557  \u2588\u2588\u2588\u2588\u2588\u2588\u2557 \u2588\u2588\u2588\u2557   \u2588\u2588\u2557   \n\u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2557\u2588\u2588\u2554\u2550\u2550\u2550\u2550\u255d\u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2557\u2588\u2588\u2554\u2550\u2550\u2550\u2550\u255d\u2588\u2588\u2551 \u2588\u2588\u2554\u255d                                \u2588\u2588\u2554\u2550\u2550\u2550\u2550\u255d\u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2557\u2588\u2588\u2551     \u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2557\u2588\u2588\u2554\u2550\u2550\u2550\u2550\u255d\u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2557\u2588\u2588\u2554\u2550\u2550\u2550\u2588\u2588\u2557\u2588\u2588\u2588\u2588\u2557  \u2588\u2588\u2551   \n\u2588\u2588\u2551  \u2588\u2588\u2551\u2588\u2588\u2588\u2588\u2588\u2557  \u2588\u2588\u2588\u2588\u2588\u2588\u2554\u255d\u2588\u2588\u2588\u2588\u2588\u2557  \u2588\u2588\u2588\u2588\u2588\u2554\u255d                                 \u2588\u2588\u2551     \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2551\u2588\u2588\u2551     \u2588\u2588\u2551  \u2588\u2588\u2551\u2588\u2588\u2588\u2588\u2588\u2557  \u2588\u2588\u2588\u2588\u2588\u2588\u2554\u255d\u2588\u2588\u2551   \u2588\u2588\u2551\u2588\u2588\u2554\u2588\u2588\u2557 \u2588\u2588\u2551   \n\u2588\u2588\u2551  \u2588\u2588\u2551\u2588\u2588\u2554\u2550\u2550\u255d  \u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2557\u2588\u2588\u2554\u2550\u2550\u255d  \u2588\u2588\u2554\u2550\u2588\u2588\u2557                                 \u2588\u2588\u2551     \u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2551\u2588\u2588\u2551     \u2588\u2588\u2551  \u2588\u2588\u2551\u2588\u2588\u2554\u2550\u2550\u255d  \u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2557\u2588\u2588\u2551   \u2588\u2588\u2551\u2588\u2588\u2551\u255a\u2588\u2588\u2557\u2588\u2588\u2551   \n\u2588\u2588\u2588\u2588\u2588\u2588\u2554\u255d\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2551  \u2588\u2588\u2551\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2551  \u2588\u2588\u2557                                \u255a\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2551  \u2588\u2588\u2551\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2588\u2588\u2588\u2588\u2554\u255d\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2551  \u2588\u2588\u2551\u255a\u2588\u2588\u2588\u2588\u2588\u2588\u2554\u255d\u2588\u2588\u2551 \u255a\u2588\u2588\u2588\u2588\u2551   \n\u255a\u2550\u2550\u2550\u2550\u2550\u255d \u255a\u2550\u2550\u2550\u2550\u2550\u2550\u255d\u255a\u2550\u255d  \u255a\u2550\u255d\u255a\u2550\u2550\u2550\u2550\u2550\u2550\u255d\u255a\u2550\u255d  \u255a\u2550\u255d                                 \u255a\u2550\u2550\u2550\u2550\u2550\u255d\u255a\u2550\u255d  \u255a\u2550\u255d\u255a\u2550\u2550\u2550\u2550\u2550\u2550\u255d\u255a\u2550\u2550\u2550\u2550\u2550\u255d \u255a\u2550\u2550\u2550\u2550\u2550\u2550\u255d\u255a\u2550\u255d  \u255a\u2550\u255d \u255a\u2550\u2550\u2550\u2550\u2550\u255d \u255a\u2550\u255d  \u255a\u2550\u2550\u2550\u255d   \n                                                                                                                                              \n");
     Console.ForegroundColor = ConsoleColor.White;
 }
-
-
-
 
 //Funcion de encabezado de apertrura cuenta
 static void encabezadoApertura()
