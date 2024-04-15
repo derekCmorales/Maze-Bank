@@ -4,7 +4,6 @@
  */
 Random rnd = new Random();
 List<int> numcheque_ls = new List<int>();
-
 int numcheque;
 
 string nombres = "N/A";
